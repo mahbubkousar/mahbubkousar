@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-![Profile views](https://komarev.com/ghpvc/?username=your_username&style=flat-square)
+![Profile views](https://komarev.com/ghpvc/?username=mahbubkousar&style=flat-square)
 
 <!--
 **mahbubkousar/mahbubkousar** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
