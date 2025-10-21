@@ -185,6 +185,66 @@ body.libertinus {
   text-align: justify;
 }
 
+
+/* =================================================================== */
+/*             START: NEW Minimal Top Navigation Bar CSS               */
+/* =================================================================== */
+
+/* --- Main Navigation Container --- */
+.top-nav {
+  position: fixed; /* Fixes the bar to the top of the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--body-bg-color); /* Uses existing variable for light/dark mode */
+  border-bottom: 1px solid var(--footnotes-border-color); /* Subtle separator line */
+  z-index: 1000; /* Ensures it stays on top of all other content */
+  padding: 0.5rem 0; /* Vertical padding */
+  font-size: 0.9em; /* Slightly smaller font to be less intrusive */
+}
+
+/* --- The list that holds the links --- */
+.top-nav ul {
+  list-style: none; /* Removes bullet points */
+  margin: 0;
+  padding: 0 1rem; /* Horizontal padding for the content */
+  white-space: nowrap; /* Prevents items from wrapping to a new line */
+  overflow-x: auto; /* Enables horizontal scrolling ONLY if needed */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+}
+
+/* --- Individual list items --- */
+.top-nav li {
+  display: inline-block; /* Aligns items horizontally */
+  vertical-align: middle;
+}
+
+/* --- The separator between items --- */
+/* Selects every list item that comes after another one, preventing a separator before the first item */
+.top-nav li + li::before {
+  content: '|';
+  margin: 0 0.75rem; /* Space around the separator */
+  color: var(--body-color); /* Use the main text color */
+  opacity: 0.4; /* Make it less prominent */
+}
+
+/* --- The navigation links --- */
+.top-nav a {
+  color: var(--body-color); /* Use the main text color */
+  text-decoration: none; /* No underlines */
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+
+.top-nav a:hover {
+  text-decoration: underline; /* Add underline on hover for feedback */
+}
+
+/* =================================================================== */
+/*               END: NEW Minimal Top Navigation Bar CSS               */
+/* =================================================================== */
+
+
 body {
   font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
   line-height: 1.8;
@@ -193,7 +253,9 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   margin: 0 auto;
-  padding: 2rem 1.25rem;
+  
+  /* UPDATED: Increased top padding to prevent content from hiding under the fixed nav bar */
+  padding: 5rem 1.25rem 2rem 1.25rem;
 
   counter-reset: theorem definition sidenote-counter;
 
